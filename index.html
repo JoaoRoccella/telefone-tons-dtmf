@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Joao Roccella">
+    <meta name="description" content="Um telefone com tons DTMF gerados programaticamente">
+
+    <!-- Incluindo a biblioteca de ícones Bootstrap Icons para os botões -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Estilos exclusivos do telefone -->
+    <link rel="stylesheet" href="telefone.css">
+
+    <style>
+        /* Centralizando o telefone no body */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+    </style>
+
+    <title>Telefone DTMF</title>
+</head>
+
+<body>
+
+    <div id="phone-container">
+        <div id="phone-screen"></div>
+        <div class="js-dtmf-interface" id="phone-buttons">
+
+            <button class="dial-number" type="button" data-key="1" data-dtmf="1">1</button>
+            <button class="dial-number" type="button" data-key="2" data-dtmf="2">2</button>
+            <button class="dial-number" type="button" data-key="3" data-dtmf="3">3</button>
+            <button class="dial-number" type="button" data-key="4" data-dtmf="4">4</button>
+            <button class="dial-number" type="button" data-key="5" data-dtmf="5">5</button>
+            <button class="dial-number" type="button" data-key="6" data-dtmf="6">6</button>
+            <button class="dial-number" type="button" data-key="7" data-dtmf="7">7</button>
+            <button class="dial-number" type="button" data-key="8" data-dtmf="8">8</button>
+            <button class="dial-number" type="button" data-key="9" data-dtmf="9">9</button>
+            
+            <button type="button" id="btMicrofone" data-key="mic" data-dtmf="no-tone">
+                <i class="bi bi-mic-fill"></i>
+            </button>
+
+            <button class="dial-number" type="button" data-key="0" data-dtmf="0">0</button>
+
+            <button type="button" id="phoneScreenReset" data-key="clr" data-dtmf="no-tone">
+                <i class="bi bi-x-lg"></i>
+            </button>
+
+            <button class="btnCall" id="btnCall" type="button" onclick="call()" data-key="pck" data-dtmf="no-tone">
+                <i class="bi bi-telephone-fill "></i>
+            </button>
+
+            <button type="button" id="btnEndCall" onclick="endCall()" data-key="end" data-dtmf="tone">
+                <i class="bi bi-telephone-fill call"></i>
+            </button>
+
+        </div>
+    </div>
+
+    <!-- Integração do telefone: incluir o jQuery para a geração dos tons DTMF -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <!-- Integração do telefone: incluir os arquivos de script abaixo -->
+    <script src="telefone.js"></script>
+    <script src="dtmf.js"></script>
+</body>
+
+</html>

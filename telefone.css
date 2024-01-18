@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+#phone-container {
+    background-color: #333;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 300px;
+}
+
+#phone-screen {
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+    font-size: 2rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.phone-status {
+    font-size: 1rem !important;
+}
+
+#phone-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 5px;
+    padding: 10px;
+}
+
+#phone-buttons button {
+    font-family: 'Montserrat', sans-serif;
+    width: 100%;
+    padding: 10px;
+    font-size: 2rem;
+    cursor: pointer;
+    border: none;
+}
+
+.btnCall {
+    grid-column: span 2;
+}
+
+#phone-buttons button:active {
+    background-color: #aaa;
+}
+
+.bi-mic-fill,
+#btnCall .bi-telephone-fill {
+    color: green;
+}
+
+.bi-mic-mute-fill,
+#btnEndCall .bi-telephone-fill,
+.bi-x-lg {
+    color: red;
+}
+
+#btnEndCall .bi-telephone-fill::before {
+    transform: rotate(135deg) translate(3px, -3px);
+}
